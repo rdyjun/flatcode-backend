@@ -1,5 +1,6 @@
 package bros.flatcode.entity;
 
+import bros.flatcode.entity.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Entity @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class Member {
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
