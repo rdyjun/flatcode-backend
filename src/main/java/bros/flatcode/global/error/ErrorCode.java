@@ -1,7 +1,9 @@
 package bros.flatcode.global.error;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+@Getter
 public enum ErrorCode {
 
     // 회원
