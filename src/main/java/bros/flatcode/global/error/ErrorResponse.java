@@ -10,11 +10,11 @@ import java.util.List;
 @Getter @Builder
 public class ErrorResponse {
 
-    private String statusCode;
+    private int statusCode;
     private String errorCode;
     private String errorMessage;
 
-    public static ErrorResponse of(String statusCode, String errorCode, String errorMessage){
+    public static ErrorResponse of(int statusCode, String errorCode, String errorMessage){
 
         return ErrorResponse.builder()
                 .statusCode(statusCode)
@@ -23,9 +23,10 @@ public class ErrorResponse {
                 .build();
     }
 
-    public static ErrorResponse of(String errorCode, BindingResult bindingResult){
+    public static ErrorResponse of(int statusCode, String errorCode, BindingResult bindingResult){
 
         return ErrorResponse.builder()
+                .statusCode(statusCode)
                 .errorCode(errorCode)
                 .errorMessage(createErrorMessage(bindingResult))
                 .build();
