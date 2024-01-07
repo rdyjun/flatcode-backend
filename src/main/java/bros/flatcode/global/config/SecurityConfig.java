@@ -41,8 +41,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         return http
-                .httpBasic(withDefaults())
-                .csrf(withDefaults())
+                .httpBasic(httpBasic -> httpBasic.disable())
+                .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(
                                 request -> new CorsConfiguration().applyPermitDefaultValues()))
                 .authorizeHttpRequests(authorize -> authorize
