@@ -80,6 +80,12 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    /**
+     * 멤버 username 수정
+     * @param id
+     * @param username
+     * @return
+     */
     @Transactional
     public Long updateUsername(Long id, String username){
 
@@ -88,6 +94,11 @@ public class MemberService {
         return findMember.updateUsername(username);
     }
 
+    /**
+     * 멤버 삭제
+     * @param id
+     * @return
+     */
     @Transactional
     public Boolean deleteMember(Long id){
 
