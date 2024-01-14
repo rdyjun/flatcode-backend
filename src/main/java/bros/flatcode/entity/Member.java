@@ -4,9 +4,10 @@ import bros.flatcode.entity.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity @Builder
+@Entity @Builder @Getter
 @NoArgsConstructor @AllArgsConstructor
 public class Member extends BaseEntity {
 
