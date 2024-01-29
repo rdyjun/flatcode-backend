@@ -29,6 +29,17 @@ public class TokenManager {
 
         Date accessTokenExpireTime = createAccessTokenExpireTime();
         Date refreshTokenExpireTime = createRefreshTokenExpireTime();
+
+        String accessToken = createAccessToken(id, username, role, accessTokenExpireTime);
+        String refreshToken = createRefreshToken(id, refreshTokenExpireTime);
+
+        return TokenDto.builder()
+                .id(id)
+                .accessToken(accessToken)
+                .accessTokenExpireTime(accessTokenExpireTime)
+                .refreshToken(refreshToken)
+                .refreshTokenExpireTime(refreshTokenExpireTime)
+                .build();
     }
 
     private Date createAccessTokenExpireTime() {
