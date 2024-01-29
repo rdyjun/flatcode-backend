@@ -1,3 +1,11 @@
+spring:
+  application:
+    name: platcode
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://localhost:8888
+
 token:
   secret: tokensecret # ??? ???
   access-token-expiration-time: 900000 # 15? 1000(ms) x 60(s) x 15(m)
